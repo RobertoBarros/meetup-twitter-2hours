@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "twitts_form" do %>
+  <%= simple_form_for twitt do |f| %>
+    <%= f.input :content, label: "What's happening" %>
+    <%= f.submit "Post", class: 'btn btn-success' %>
+  <% end %>
+<% end %>

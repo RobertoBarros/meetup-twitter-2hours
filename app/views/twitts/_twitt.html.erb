@@ -1,0 +1,17 @@
+<%= turbo_frame_tag twitt do %>
+  <div class="card mt-3">
+    <div class="card-header">
+      <%= twitt.user.email %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= twitt.content %></h5>
+      <p class="card-text">Created at <%= time_ago_in_words(twitt.created_at) %> ago</p>
+      <p>
+        <%= simple_form_for twitt, url: like_twitt_path(twitt), method: :posto do |f| %>
+          <%= f.submit "Like", class: 'btn btn-danger' %>
+        <% end %>
+        Likes: <%= twitt.like %>
+      </p>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<%= turbo_stream_from "twitts" %>
+<div class="container">
+  <%= render 'form', twitt: @twitt %>
+  <%= turbo_frame_tag "twitts" do %>
+    <%= render @twitts %>
+  <% end %>
+</div>
